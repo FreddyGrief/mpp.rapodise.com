@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Mpp Rapodise</title>
+    <meta name="description"
+          content="An online piano for angels you can play alone or with others in real-time. MIDI support, 100 keys, velocity sensitive. You can show off your skill or chat while listening to others play."/>
+    <link rel="stylesheet" href="https://mpp.rapodise.com/screen.css"/>
+    <link rel="stylesheet" href="/screen.css"/>
+
+    <link rel="canonical" href="https://mpp.rapodise.com/">
+    <script src="https://mppclone.com/binary.js"></script>
+
+    <script>
+      window.aiptag = window.aiptag || {cmd: []};
+      aiptag.cmd.display = aiptag.cmd.display || [];
+      aiptag.cmd.player = aiptag.cmd.player || [];
+
+      //CMP tool settings
+      aiptag.cmp = {
+        show: true,
+        position: "centered",  //centered, bottom
+        button: true,
+        buttonText: "Privacy settings",
+        buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+      }
+
+      aiptag.cmd.player.push(function() {
+        aiptag.adplayer = new aipPlayer({
+          AD_WIDTH: 960,
+          AD_HEIGHT: 540,
+          AD_DISPLAY: 'default', //default, fullscreen, center, fill
+          LOADING_TEXT: 'loading advertisement',
+          PREROLL_ELEM: function(){return document.getElementById('preroll')},
+          AIP_COMPLETE: function (evt)  {
+            /*******************
+             ***** WARNING *****
+             *******************
+             Please do not remove the PREROLL_ELEM
+             from the page, it will be hidden automaticly.
+             If you do want to remove it use the AIP_REMOVE callback.
+             */
+            alert("Preroll Ad Completed: " + evt);
+          },
+          AIP_REMOVE: function ()  {
+            // Here it's save to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
+          }
+        });
+      });
+
+      function show_preroll() {
+        //check if the adslib is loaded correctly or blocked by adblockers etc.
+        if (typeof aiptag.adplayer !== 'undefined') {
+          aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
+        } else {
+          //Adlib didnt load this could be due to an adblocker, timeout etc.
+          //Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE or AIP_REMOVE.
+          alert("Ad Could not be loaded, load your content here");
+        }
+      }
+    </script>
+    <script async src="//api.adinplay.com/libs/aiptag/pub/BTP/mpp-rapodise.com/tag.min.js"></script>
+<script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js?ts=1647334800'></script></head>
+<body>
+
+<style>
+    .ad1 {
+        position: fixed;
+        top: 100px;
+        z-index: 99999;
+        /*background: red;*/
+        width: 970px;
+        height: 90px;
+        right: 0;
+    }
+    .discord {
+        background: white;
+        padding: 10px;
+        height: 35px;
+        position: fixed;
+        right: 0;
+        top: 24px;
+        z-index: 99999;
+    }
+    .blog {
+        background: white;
+        padding: 10px;
+        height: 8px;
+        line-height: 7px;
+        position: fixed;
+        right: 153px;
+        top: 0px;
+        z-index: 99999;
+        font-size: 17px;
+        border: 3px solid #ffffff;
+    }
+    .contribute {
+        background: white;
+        padding: 10px;
+        height: 8px;
+        line-height: 7px;
+        position: fixed;
+        right: 265px;
+        top: 0px;
+        z-index: 99999;
+        font-size: 17px;
+        border: 3px solid #ffffff;
+    }
+</style>
+
+<script>
+  setInterval(function(){
+    aiptag.cmd.display.push(function() { aipDisplayTag.display('mpp-rapodise-com_970x90'); });
+  }, 14 * 1000)
+</script>
+
+<div class='ad1' id='mpp-rapodise-com_970x90'>
+    <script type='text/javascript'>
+      aiptag.cmd.display.push(function() { aipDisplayTag.display('mpp-rapodise-com_970x90'); });
+    </script>
+</div>
+
+<a class="discord" href="https://discord.gg/Xr5dubEYgV" target="_blank">Заходи Оффицальный Дискорд 2022</a>
+<a class="discord" href="https://discord.gg/C2CcpTjGqn" target="_blank">Заходи Оффицальный Дискорд 2022</a>
+<a class="blog" href="https://multiplayerpiano.com/c/latest/" target="_blank">Piano Blog</a>
+<a class="contribute" href="https://multiplayerpiano.com/contribute-piano/" target="_blank">Contribute</a>
+<div id="social">
+    <div id="like-button">
+        <div class="fb-like" data-href="https://www.facebook.com/MultiplayerPiano/" data-layout="button_count"
+             data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+    </div>
+    <div id="inclinations"></div>
+</div>
+
+
+
+<div id="chat">
+    <ul></ul>
+    <input id="chat-input" placeholder="You can chat with this thing." class="translate" maxlength="512"/></div>
+<div id="room-notice"></div>
+<div id="names"></div>
+<div id="piano"></div>
+<div id="cursors"></div>
+<noscript>
+    <center><p> Mpp Rapodise for angels is an online, full 100-key piano you can play alone or with others in real-time. Plug
+        up your MIDI keyboard, MIDI in and out are supported. You should be able to hear some seriously talented piano
+        players performing here! Join in or just chat and listen.</p>
+        <p> For good performance, Chrome is highly recommended. Firefox also supports the requisite Web Audio API, but
+            performance may not be as good. Chrome has Web MIDI.</p>
+        <p> Of course, first you need to <a href="http://www.enable-javascript.com/" class="link">Enable Javascript</a>
+            or it won't do anything...!</p></center>
+</noscript>
+<div id="bottom">
+    <div class="relative">
+        <div id="room">
+            <div class="info"></div>
+            <div class="expand"></div>
+            <div class="more">
+                <div class="new translate">Новая Карта..</div>
+            </div>
+        </div>
+        <div id="new-room-btn" class="ugly-button translate">Новая Карта...</div>
+        <div id="play-alone-btn" class="ugly-button">Играть Одному</div>
+        <div id="room-settings-btn" class="ugly-button">Настроить Карту</div>
+        <div id="midi-btn" class="ugly-button translate">Миди/Вход</div>
+        <div id="record-btn" class="ugly-button translate">Записать МР3</div>
+        <div id="synth-btn" class="ugly-button translate">Синт</div>
+        <div id="sound-btn" class="ugly-button sound-btn">Звук Выбрать</div>
+        <div id="client-settings-btn" class="ugly-button client-settings-btn">Настрой Клиент</div>
+        <div id="clearchat-btn" class="ugly-button clearchat-btn" style="display: none;">Удалить Чат</div>
+        <div id="getcrown-btn" class="ugly-button getcrown-btn" style="display: none;">Отдать Корону</div>
+        <div id="makelobby-btn" class="ugly-button makelobby-btn" style="display: none;">Сменить Лобби</div>
+        <div id="status"></div>
+        <div id="volume"><input type="range" id="volume-slider" min="0.0" max="1.0" step="0.01"></div>
+        <div id="volume-label">Громкость</div>
+        <div id="quota">
+            <div class="value"></div>
+        </div>
+    </div>
+</div>
+<div id="modal">
+    <div class="bg"></div>
+    <div id="modals">
+        <div id="sound-warning" class="dialog"><p>Этот сайт производит много шума! Возможно, вы захотите отрегулировать громкость
+прежде чем продолжить.</p>
+            <button class="submit">Играть</button>
+        </div>
+        <div id="new-room" class="dialog"><p><input type="text" name="имя" placeholder="имя карты"
+                                                    class="text translate" maxlength="512"/></p>
+            <p><label><input type="checkbox" name="visible" class="checkbox translate" checked>Открыть Сервер (Открывание
+сервера)</label></p> </label></p>
+            <button class="submit">go</button>
+        </div>
+        <div id="room-settings" class="dialog"><p>
+            <div class="ugly-button Отдать Корону">Отдать Корону</div>
+            </p><p><label><input type="checkbox" name="visible" class="checkbox translate" checked>"Открыть Сервер (Открывание
+сервера)"</label></p> </label></p><p><label><input type="checkbox" name="chat"
+                                                                   class="checkbox translate" checked>Enable
+                Chat</label></p>
+            <p><label><input type="checkbox" name="crownsolo" class="checkbox"Играть Один"</label></p>
+            <p><label><input type="checkbox" name="nocussing" class="checkbox">Не Ругаться!</label></p>
+            <p><label>Inner color: &nbsp;<input type="color" name="color" placeholder="" maxlength="7"
+                                                class="color"></label></p>
+            <p><label>Outer color: &nbsp;<input type="color" name="color2" placeholder="" maxlength="7"
+                                                class="color"></label></p>
+            <p><label>Player limit: &nbsp;<input type="text" name="limit" maxlength="2" value="50"></label></p></div>
+        <div id="rename" class="dialog"><p><input type="text" name="name" placeholder="Добавить Своё Имя" maxlength="40"
+                                                  class="text"/> <input type="color" name="color" placeholder=""
+                                                                        maxlength="7" class="color"/></p>
+            <button class="submit">USER SET</button>
+        </div>
+    </div>
+</div>
+<script src="https://mpp.rapodise.com/jquery.min.js"></script>
+<script src="https://mpp.rapodise.com/util.js"></script>
+<script src="https://mpp.rapodise.com/Client.js"></script>
+<script src="https://mpp.rapodise.com/NoteQuota.js"></script>
+<script src="https://mpp.rapodise.com/lame.min.js"></script>
+<script src="https://mpp.rapodise.com/Color.js"></script>
+<script src="https://mpp.rapodise.com/antiNode.js"></script>
+<script src="https://mpp.rapodise.com/script.js"></script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6ec42e910d634169',m:'OOs8IFbGQ3OsKuQ2Xmi3_dNFjuuUu1bWa6NOAVsa8Cc-1647336118-0-AYuoXIC09wznIuPRxKmOfXOtyGPiOy0I1x4FV+kaV+KdBLlX2AwH3PdT8Er8lO04a4gxinuKgFxl9OHLOT0ldW9o6SjycBGYceetcUDulxD3AOnqtHGraGzswZRWAJA4eA==',s:[0x35b4a7bbc7,0x120cbbd2c8],u:'/cdn-cgi/challenge-platform/h/g'}})();</script></body>
+</html>
+  
